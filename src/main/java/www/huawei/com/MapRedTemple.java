@@ -31,6 +31,7 @@ public class MapRedTemple {
         protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
             super.map(key, value, context);
         }
+
     }
     /**
      Reducer
@@ -80,6 +81,11 @@ public class MapRedTemple {
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(IntWritable.class);
 
+/*        job.setPartitionerClass();
+        job.setCombinerClass();
+        job.setCombinerKeyGroupingComparatorClass();
+        job.setSortComparatorClass();
+        job.setGroupingComparatorClass();*/
         //设置reducer
         job.setReducerClass(MapRedReducer.class);
         job.setOutputKeyClass(Text.class);
